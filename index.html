@@ -3,264 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Кемал Бакдаулет | IT Student</title>
 
-    <!-- Подключаем CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Шапка сайта -->
+    <!-- ==================== ШАПКА ==================== -->
     <header>
         <div class="logo">KB.</div>
 
         <nav>
-            <button id="homeButton" class="active" onclick="showPage('home')">
-                Главная
-            </button>
-
-            <button id="resumeButton" onclick="showPage('resume')">
-                Резюме
-            </button>
+            <button class="nav-btn active" data-page="home">Главная</button>
+            <button class="nav-btn" data-page="resume">Резюме</button>
+            <button class="nav-btn" data-page="task1">Задание 1</button>
+            <button class="nav-btn" data-page="task2">Задание 2</button>
         </nav>
     </header>
 
 
-    <!-- ==================== -->
-    <!-- ГЛАВНАЯ СТРАНИЦА -->
-    <!-- ==================== -->
-
+    <!-- ==================== ГЛАВНАЯ ==================== -->
     <section id="home" class="page active">
-
         <div class="hero">
-
             <div class="hero-text">
-
-                <div class="badge">
-                    IT Student • AITU
-                </div>
-
-                <h1>
-                    Привет! Я <strong>Кемал Бакдаулет</strong>
-                </h1>
-
-                <h2>
-                    Будущий IT-специалист
-                </h2>
-
-                <p>
-                    Мне 20 лет, я изучаю информационные технологии
-                    и развиваюсь в сфере программирования и
-                    веб-разработки.
-                </p>
-
-                <p>
-                    Сейчас я учусь в <strong>Astana IT University</strong>
-                    и постоянно совершенствую свои знания.
-                </p>
-
-                <button class="main-button" onclick="showPage('resume')">
-                    Посмотреть резюме →
-                </button>
-
+                <div class="badge">IT Student • AITU</div>
+                <h1>Привет! Я <strong>Кемал Бакдаулет</strong></h1>
+                <h2>Будущий IT-специалист</h2>
+                <p>Мне 20 лет, я изучаю информационные технологии и развиваюсь в сфере программирования и веб-разработки.</p>
+                <p>Сейчас я учусь в <strong>Astana IT University</strong> и постоянно совершенствую свои знания.</p>
+                <button class="main-button" data-page="resume">Посмотреть резюме →</button>
             </div>
-
-
             <div class="hero-image">
                 <img src="avatar.jpeg" alt="Фото Кемала Бакдаулета">
             </div>
-
         </div>
 
-
         <div class="interests">
-
             <h2>Мои интересы</h2>
-
             <div class="cards">
-
                 <div class="card">
                     <div class="card-icon">💻</div>
                     <h3>Программирование</h3>
-                    <p>
-                        Изучаю Java, JavaScript и другие
-                        современные технологии.
-                    </p>
+                    <p>Изучаю Java, JavaScript и другие современные технологии.</p>
                 </div>
-
-
                 <div class="card">
                     <div class="card-icon">🌐</div>
                     <h3>Web-разработка</h3>
-                    <p>
-                        Создаю сайты с использованием HTML,
-                        CSS и JavaScript.
-                    </p>
+                    <p>Создаю сайты с использованием HTML, CSS и JavaScript.</p>
                 </div>
-
-
                 <div class="card">
                     <div class="card-icon">🚀</div>
                     <h3>Развитие</h3>
-                    <p>
-                        Постоянно изучаю новые технологии
-                        и развиваю свои навыки.
-                    </p>
+                    <p>Постоянно изучаю новые технологии и развиваю свои навыки.</p>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
 
-
-    <!-- ==================== -->
-    <!-- СТРАНИЦА РЕЗЮМЕ -->
-    <!-- ==================== -->
-
+    <!-- ==================== РЕЗЮМЕ ==================== -->
     <section id="resume" class="page">
-
         <div class="resume-container">
 
             <div class="resume-header">
-
                 <img src="avatar.jpeg" alt="Кемал Бакдаулет">
-
                 <div>
                     <h1>Кемал Бакдаулет</h1>
-
-                    <h2>
-                        IT Student • начинающий IT-специалист
-                    </h2>
-
-                    <p>
-                        20 лет • Astana IT University • Казахстан
-                    </p>
+                    <h2>IT Student • начинающий IT-специалист</h2>
+                    <p>20 лет • Astana IT University • Казахстан</p>
                 </div>
-
             </div>
 
-
             <div class="resume-section">
-
                 <h2>Обо мне</h2>
-
-                <p>
-                    Я студент Astana IT University, интересующийся
-                    информационными технологиями, программированием
-                    и разработкой веб-приложений.
-                </p>
-
-                <p>
-                    Мне нравится изучать новые технологии,
-                    работать над проектами и получать практический
-                    опыт в IT.
-                </p>
-
+                <p>Я студент Astana IT University, интересующийся информационными технологиями, программированием и разработкой веб-приложений.</p>
+                <p>Мне нравится изучать новые технологии, работать над проектами и получать практический опыт в IT.</p>
             </div>
 
-
             <div class="resume-section">
-
                 <h2>Образование</h2>
-
                 <div class="education">
-
                     <h3>Astana IT University</h3>
-
-                    <p>
-                        Студент направления информационных технологий.
-                    </p>
-
-                    <span>
-                        Казахстан • Астана
-                    </span>
-
+                    <p>Студент направления информационных технологий.</p>
+                    <span>Казахстан • Астана</span>
                 </div>
-
             </div>
 
-
             <div class="resume-section">
-
                 <h2>Навыки</h2>
-
                 <div class="skills">
-
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>JavaScript</span>
                     <span>Java</span>
                     <span>SQL</span>
                     <span>Git</span>
-
                 </div>
-
             </div>
-
 
             <div class="resume-section">
-
                 <h2>Личные качества</h2>
-
                 <div class="qualities">
-
                     <div>
                         <h3>Ответственность</h3>
-                        <p>
-                            Стараюсь качественно выполнять
-                            поставленные задачи.
-                        </p>
+                        <p>Стараюсь качественно выполнять поставленные задачи.</p>
                     </div>
-
                     <div>
                         <h3>Обучаемость</h3>
-                        <p>
-                            Быстро осваиваю новые технологии
-                            и инструменты.
-                        </p>
+                        <p>Быстро осваиваю новые технологии и инструменты.</p>
                     </div>
-
                     <div>
                         <h3>Командная работа</h3>
-                        <p>
-                            Умею работать в команде и находить
-                            решения совместно.
-                        </p>
+                        <p>Умею работать в команде и находить решения совместно.</p>
                     </div>
-
                 </div>
+            </div>
 
+            <div class="resume-section goal">
+                <h2>Моя цель</h2>
+                <p>Стать профессиональным IT-специалистом, получить практический опыт и участвовать в интересных технологических проектах.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== ЗАДАНИЕ 1 ==================== -->
+    <section id="task1" class="page">
+        <div class="task-container">
+
+            <div class="task-header">
+                <h1>Задание 1 — универсальная песочница DOM</h1>
+                <p>Вводи любые селекторы и тексты. Всё применяется на лету.</p>
+            </div>
+
+            <!-- ============ ЭТАП 1: Изменить элемент по селектору ============ -->
+            <div class="task-block">
+                <h3>ЭТАП 1 — Изменить текст элемента по селектору</h3>
+                <p class="hint">
+                    Можно использовать <code>#id</code>, <code>.class</code> или <code>тег</code>.
+                    Например: <code>#helloText</code>, <code>.old-element</code>, <code>footer</code>.
+                </p>
+
+                <label class="field-label">Селектор элемента:</label>
+                <input
+                    type="text"
+                    id="editSelector"
+                    class="text-input"
+                    value="#helloText"
+                    placeholder="#id, .class или тег"
+                >
+
+                <label class="field-label">Новый текст:</label>
+                <input
+                    type="text"
+                    id="editText"
+                    class="text-input"
+                    value="Сәлем, әлем!"
+                    placeholder="Введи любой текст"
+                >
+
+                <button id="editBtn" class="main-button">Применить изменения</button>
+
+                <p class="result" id="editResult"></p>
             </div>
 
 
-            <div class="resume-section goal">
+            <!-- ============ ЭТАП 2: Создать новый div ============ -->
+            <div class="task-block">
+                <h3>ЭТАП 2 — Создать новый &lt;div&gt; и добавить куда угодно</h3>
 
-                <h2>Моя цель</h2>
+                <label class="field-label">Класс нового div:</label>
+                <input
+                    type="text"
+                    id="newDivClass"
+                    class="text-input"
+                    value="new-div"
+                    placeholder="например: new-div"
+                >
 
-                <p>
-                    Стать профессиональным IT-специалистом,
-                    получить практический опыт и участвовать
-                    в интересных технологических проектах.
+                <label class="field-label">Текст нового div:</label>
+                <input
+                    type="text"
+                    id="newDivText"
+                    class="text-input"
+                    value="Мен жаңа элементпін"
+                    placeholder="Любой текст"
+                >
+
+                <label class="field-label">Куда добавить (селектор родителя):</label>
+                <input
+                    type="text"
+                    id="newDivParent"
+                    class="text-input"
+                    value="body"
+                    placeholder="body, #paragraphArea, .task-container..."
+                >
+
+                <button id="createDivBtn" class="main-button">Создать div</button>
+
+                <p class="result" id="createDivResult"></p>
+            </div>
+
+
+            <!-- ============ ЭТАП 3: Удалить элемент ============ -->
+            <div class="task-block">
+                <h3>ЭТАП 3 — Удалить элемент по селектору</h3>
+                <p class="hint">
+                    Ниже специально лежит удаляемый элемент:
+                    <code>&lt;div class="old-element"&gt;</code>
                 </p>
+
+                <div class="old-element">Мен ескі элементпін</div>
+
+                <label class="field-label">Селектор для удаления:</label>
+                <input
+                    type="text"
+                    id="removeSelector"
+                    class="text-input"
+                    value=".old-element"
+                    placeholder=".old-element"
+                >
+
+                <button id="removeBtn" class="main-button">Удалить элемент</button>
+
+                <p class="result" id="removeResult"></p>
+            </div>
+
+
+            <!-- ============ ЭТАП 4: Создать абзац с кликом ============ -->
+            <div class="task-block">
+                <h3>ЭТАП 4 — Создать &lt;p&gt;, который меняет цвет и размер по клику</h3>
+
+                <label class="field-label">Текст абзаца:</label>
+                <input
+                    type="text"
+                    id="paragraphText"
+                    class="text-input"
+                    value="Бұл ауыспалы абзац"
+                    placeholder="Любой текст"
+                >
+
+                <label class="field-label">Куда добавить (селектор родителя):</label>
+                <input
+                    type="text"
+                    id="paragraphParent"
+                    class="text-input"
+                    value="#paragraphArea"
+                    placeholder="#paragraphArea"
+                >
+
+                <button id="createParagraphBtn" class="main-button">Создать абзац</button>
+
+                <p class="result" id="paragraphResult"></p>
+
+                <div id="paragraphArea"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== ЗАДАНИЕ 2 ==================== -->
+    <section id="task2" class="page">
+        <div class="task-container">
+
+            <div class="task-header">
+                <h1>Задание 2 — управление классами</h1>
+                <p>Выбирай элемент по селектору, вводи класс, управляй им.</p>
+            </div>
+
+            <div class="task-block">
+                <h3>Управление классами элемента</h3>
+
+                <label class="field-label">Селектор элемента:</label>
+                <input
+                    type="text"
+                    id="classSelector"
+                    class="text-input"
+                    value="#classTarget"
+                    placeholder="#classTarget, .demo-box, ..."
+                >
+
+                <label class="field-label">Класс для управления:</label>
+                <input
+                    type="text"
+                    id="className"
+                    class="text-input"
+                    value="active"
+                    placeholder="active"
+                >
+
+                <div class="btn-row">
+                    <button id="toggleBtn" class="main-button">Toggle</button>
+                    <button id="addBtn" class="main-button secondary">Add</button>
+                    <button id="removeClassBtn" class="main-button secondary">Remove</button>
+                    <button id="showBtn" class="main-button secondary">Показать классы</button>
+                </div>
+
+                <p class="result" id="classResult"></p>
+
+                <!-- Целевой элемент, к которому по умолчанию применяются действия -->
+                <div id="classTarget" class="demo-box">
+                    Менің кластарым бар
+                </div>
 
             </div>
 
         </div>
-
     </section>
 
 
+    <!-- ==================== ПОДВАЛ ==================== -->
     <footer>
         © 2026 Kemal Bakdaulet
     </footer>
 
 
-    <!-- Подключаем JavaScript -->
     <script src="script.js"></script>
 
 </body>
