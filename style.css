@@ -10,9 +10,8 @@ body {
     background: #0b1120;
     color: #ffffff;
     line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
 }
-
-
 
 /* ==================== ШАПКА ==================== */
 header {
@@ -21,10 +20,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: #111827;
     border-bottom: 1px solid #263249;
-
     position: sticky;
     top: 0;
     z-index: 100;
@@ -48,8 +45,6 @@ nav button {
 nav button:hover { color: white; background: #1e293b; }
 nav button.active { background: #2563eb; color: white; }
 
-
-
 /* ==================== ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ ==================== */
 .page { display: none; min-height: calc(100vh - 150px); }
 
@@ -62,8 +57,6 @@ nav button.active { background: #2563eb; color: white; }
     from { opacity: 0; transform: translateY(15px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-
-
 
 /* ==================== ГЛАВНАЯ ==================== */
 .hero {
@@ -125,8 +118,6 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
 
 .main-button.secondary:hover { background: #334155; color: white; }
 
-
-
 /* ==================== ПОЛЯ ВВОДА ==================== */
 .field-label {
     display: block;
@@ -139,16 +130,12 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     width: 100%;
     padding: 12px 16px;
     margin-bottom: 12px;
-
     background: #0f172a;
     color: #ffffff;
-
     border: 1px solid #263249;
     border-radius: 10px;
-
     font-size: 15px;
     font-family: monospace;
-
     transition: 0.3s;
 }
 
@@ -169,8 +156,6 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
 
 .result.ok    { color: #4ade80; }
 .result.error { color: #f87171; }
-
-
 
 /* ==================== ИНТЕРЕСЫ ==================== */
 .interests { max-width: 1200px; margin: auto; padding: 30px; }
@@ -194,8 +179,6 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
 .card-icon { font-size: 40px; margin-bottom: 15px; }
 .card h3 { margin-bottom: 10px; font-size: 21px; }
 .card p { color: #94a3b8; }
-
-
 
 /* ==================== РЕЗЮМЕ ==================== */
 .resume-container { max-width: 900px; margin: auto; padding: 70px 30px; }
@@ -258,8 +241,6 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
 
 .goal { border-color: #2563eb; }
 
-
-
 /* ==================== СТРАНИЦЫ ЗАДАНИЙ ==================== */
 .task-container {
     max-width: 900px;
@@ -285,6 +266,9 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     background: #111827;
     border: 1px solid #263249;
     border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .task-block h3 {
@@ -310,10 +294,7 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn-row .main-button { margin-top: 0; }
 
-
-
 /* ==================== ЭЛЕМЕНТЫ ДЛЯ ЗАДАНИЙ ==================== */
-
 #helloText {
     display: inline-block;
     padding: 10px 16px;
@@ -393,7 +374,161 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     margin-top: 10px;
 }
 
+/* ============ ЗАДАНИЕ 3. Ошибка ============ */
+.error-msg {
+    color: #f87171;
+    font-weight: 600;
+    margin: 4px 0;
+    min-height: 20px;
+}
 
+/* ============ ЗАДАНИЕ 3. Палитра ============ */
+.color-picker-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+.color-picker {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform 0.15s, border-color 0.15s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.color-swatch:hover { transform: scale(1.15); }
+.color-swatch.selected {
+    border-color: #60a5fa;
+    transform: scale(1.2);
+}
+
+/* ============ ЗАДАНИЕ 3. Таблица ============ */
+#tableContainer {
+    margin-top: 12px;
+    overflow-x: auto;
+    text-align: center;
+}
+#tableContainer table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+#tableContainer td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #334155;
+    cursor: pointer;
+    background: #0f172a;
+    transition: background 0.15s;
+}
+#tableContainer td:hover {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+}
+
+/* ============ ЗАДАНИЕ 3. Статистика ============ */
+.color-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+    min-height: 30px;
+}
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #0f172a;
+    border: 1px solid #263249;
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+.stat-item .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============ ЗАДАНИЕ 4. Switch ============ */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #334155;
+    border-radius: 32px;
+    transition: 0.3s;
+}
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.switch input:checked + .slider { background: #2563eb; }
+.switch input:checked + .slider::before { transform: translateX(28px); }
+
+/* ============ ТЁМНАЯ ТЕМА ============ */
+body.dark {
+    background: #05070f;
+    color: #eaeaea;
+}
+body.dark header {
+    background: #0a0f1c;
+    border-color: #1a2438;
+}
+body.dark .task-header,
+body.dark .task-block,
+body.dark .card,
+body.dark .resume-header,
+body.dark .resume-section {
+    background: #0a0f1c;
+    border-color: #1a2438;
+}
+body.dark .text-input {
+    background: #05070f;
+    color: #eaeaea;
+    border-color: #1a2438;
+}
+body.dark .stat-item {
+    background: #05070f;
+    color: #eaeaea;
+}
+body.dark #tableContainer td {
+    background: #05070f;
+    border-color: #1a2438;
+}
+body.dark .color-swatch.selected {
+    border-color: #fff;
+}
 
 /* ==================== ПОДВАЛ ==================== */
 footer {
@@ -403,11 +538,8 @@ footer {
     border-top: 1px solid #263249;
 }
 
-
-
 /* ==================== АДАПТИВНОСТЬ ==================== */
 @media (max-width: 768px) {
-
     header { padding: 15px 20px; flex-direction: column; gap: 15px; }
     nav { justify-content: center; }
     nav button { padding: 8px 14px; font-size: 14px; }

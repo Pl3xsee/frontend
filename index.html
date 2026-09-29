@@ -19,6 +19,8 @@
             <button class="nav-btn" data-page="resume">Резюме</button>
             <button class="nav-btn" data-page="task1">Задание 1</button>
             <button class="nav-btn" data-page="task2">Задание 2</button>
+            <button class="nav-btn" data-page="task3">Задание 3</button>
+            <button class="nav-btn" data-page="task4">Задание 4</button>
         </nav>
     </header>
 
@@ -138,7 +140,7 @@
                 <p>Вводи любые селекторы и тексты. Всё применяется на лету.</p>
             </div>
 
-            <!-- ============ ЭТАП 1: Изменить элемент по селектору ============ -->
+            <!-- ЭТАП 1 -->
             <div class="task-block">
                 <h3>ЭТАП 1 — Изменить текст элемента по селектору</h3>
                 <p class="hint">
@@ -147,67 +149,38 @@
                 </p>
 
                 <label class="field-label">Селектор элемента:</label>
-                <input
-                    type="text"
-                    id="editSelector"
-                    class="text-input"
-                    value="#helloText"
-                    placeholder="#id, .class или тег"
-                >
+                <input type="text" id="editSelector" class="text-input"
+                       value="#helloText" placeholder="#id, .class или тег">
 
                 <label class="field-label">Новый текст:</label>
-                <input
-                    type="text"
-                    id="editText"
-                    class="text-input"
-                    value="Сәлем, әлем!"
-                    placeholder="Введи любой текст"
-                >
+                <input type="text" id="editText" class="text-input"
+                       value="Сәлем, әлем!" placeholder="Введи любой текст">
 
                 <button id="editBtn" class="main-button">Применить изменения</button>
-
                 <p class="result" id="editResult"></p>
             </div>
 
-
-            <!-- ============ ЭТАП 2: Создать новый div ============ -->
+            <!-- ЭТАП 2 -->
             <div class="task-block">
                 <h3>ЭТАП 2 — Создать новый &lt;div&gt; и добавить куда угодно</h3>
 
                 <label class="field-label">Класс нового div:</label>
-                <input
-                    type="text"
-                    id="newDivClass"
-                    class="text-input"
-                    value="new-div"
-                    placeholder="например: new-div"
-                >
+                <input type="text" id="newDivClass" class="text-input"
+                       value="new-div" placeholder="например: new-div">
 
                 <label class="field-label">Текст нового div:</label>
-                <input
-                    type="text"
-                    id="newDivText"
-                    class="text-input"
-                    value="Мен жаңа элементпін"
-                    placeholder="Любой текст"
-                >
+                <input type="text" id="newDivText" class="text-input"
+                       value="Мен жаңа элементпін" placeholder="Любой текст">
 
                 <label class="field-label">Куда добавить (селектор родителя):</label>
-                <input
-                    type="text"
-                    id="newDivParent"
-                    class="text-input"
-                    value="body"
-                    placeholder="body, #paragraphArea, .task-container..."
-                >
+                <input type="text" id="newDivParent" class="text-input"
+                       value="body" placeholder="body, #paragraphArea, .task-container...">
 
                 <button id="createDivBtn" class="main-button">Создать div</button>
-
                 <p class="result" id="createDivResult"></p>
             </div>
 
-
-            <!-- ============ ЭТАП 3: Удалить элемент ============ -->
+            <!-- ЭТАП 3 -->
             <div class="task-block">
                 <h3>ЭТАП 3 — Удалить элемент по селектору</h3>
                 <p class="hint">
@@ -218,44 +191,26 @@
                 <div class="old-element">Мен ескі элементпін</div>
 
                 <label class="field-label">Селектор для удаления:</label>
-                <input
-                    type="text"
-                    id="removeSelector"
-                    class="text-input"
-                    value=".old-element"
-                    placeholder=".old-element"
-                >
+                <input type="text" id="removeSelector" class="text-input"
+                       value=".old-element" placeholder=".old-element">
 
                 <button id="removeBtn" class="main-button">Удалить элемент</button>
-
                 <p class="result" id="removeResult"></p>
             </div>
 
-
-            <!-- ============ ЭТАП 4: Создать абзац с кликом ============ -->
+            <!-- ЭТАП 4 -->
             <div class="task-block">
                 <h3>ЭТАП 4 — Создать &lt;p&gt;, который меняет цвет и размер по клику</h3>
 
                 <label class="field-label">Текст абзаца:</label>
-                <input
-                    type="text"
-                    id="paragraphText"
-                    class="text-input"
-                    value="Бұл ауыспалы абзац"
-                    placeholder="Любой текст"
-                >
+                <input type="text" id="paragraphText" class="text-input"
+                       value="Бұл ауыспалы абзац" placeholder="Любой текст">
 
                 <label class="field-label">Куда добавить (селектор родителя):</label>
-                <input
-                    type="text"
-                    id="paragraphParent"
-                    class="text-input"
-                    value="#paragraphArea"
-                    placeholder="#paragraphArea"
-                >
+                <input type="text" id="paragraphParent" class="text-input"
+                       value="#paragraphArea" placeholder="#paragraphArea">
 
                 <button id="createParagraphBtn" class="main-button">Создать абзац</button>
-
                 <p class="result" id="paragraphResult"></p>
 
                 <div id="paragraphArea"></div>
@@ -278,22 +233,12 @@
                 <h3>Управление классами элемента</h3>
 
                 <label class="field-label">Селектор элемента:</label>
-                <input
-                    type="text"
-                    id="classSelector"
-                    class="text-input"
-                    value="#classTarget"
-                    placeholder="#classTarget, .demo-box, ..."
-                >
+                <input type="text" id="classSelector" class="text-input"
+                       value="#classTarget" placeholder="#classTarget, .demo-box, ...">
 
                 <label class="field-label">Класс для управления:</label>
-                <input
-                    type="text"
-                    id="className"
-                    class="text-input"
-                    value="active"
-                    placeholder="active"
-                >
+                <input type="text" id="className" class="text-input"
+                       value="active" placeholder="active">
 
                 <div class="btn-row">
                     <button id="toggleBtn" class="main-button">Toggle</button>
@@ -304,11 +249,69 @@
 
                 <p class="result" id="classResult"></p>
 
-                <!-- Целевой элемент, к которому по умолчанию применяются действия -->
                 <div id="classTarget" class="demo-box">
                     Менің кластарым бар
                 </div>
+            </div>
 
+        </div>
+    </section>
+
+
+    <!-- ==================== ЗАДАНИЕ 3 ==================== -->
+    <section id="task3" class="page">
+        <div class="task-container">
+
+            <div class="task-header">
+                <h1>Задание 3 — создание таблицы</h1>
+                <p>Введи количество строк и столбцов, выбери цвет и раскрашивай ячейки.</p>
+            </div>
+
+            <div class="task-block">
+                <h3>Параметры таблицы</h3>
+
+                <label class="field-label" for="rowsInput">Жолдар саны (rows):</label>
+                <input type="text" id="rowsInput" class="text-input" placeholder="мысалы: 4">
+
+                <label class="field-label" for="colsInput">Бағандар саны (columns):</label>
+                <input type="text" id="colsInput" class="text-input" placeholder="мысалы: 5">
+
+                <div class="btn-row">
+                    <button id="createTableBtn" class="main-button">Кесте жасау</button>
+                    <button id="clearTableBtn" class="main-button secondary">Тазалау</button>
+                </div>
+
+                <p id="tableError" class="error-msg"></p>
+
+                <div class="color-picker-wrap">
+                    <span class="field-label">Түс таңдау:</span>
+                    <div id="colorPicker" class="color-picker"></div>
+                </div>
+
+                <div id="tableContainer"></div>
+
+                <div id="colorStats" class="color-stats"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== ЗАДАНИЕ 4 ==================== -->
+    <section id="task4" class="page">
+        <div class="task-container">
+
+            <div class="task-header">
+                <h1>Задание 4 — тёмная тема</h1>
+                <p>Переключатель меняет цветовой режим сайта.</p>
+            </div>
+
+            <div class="task-block">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="field-label">Қараңғы тақырыпты қосу/өшіру</span>
             </div>
 
         </div>
@@ -320,8 +323,6 @@
         © 2026 Kemal Bakdaulet
     </footer>
 
-
     <script src="script.js"></script>
-
 </body>
 </html>
