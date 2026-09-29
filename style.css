@@ -1,394 +1,437 @@
-/* ==================== СБРОС И БАЗА ==================== */
+/* ==========================================================
+   БАЗОВЫЕ СБРОСЫ
+   ========================================================== */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0b1120;
-    color: #ffffff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a1a;
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
 
-/* ==================== ШАПКА ==================== */
+/* ==========================================================
+   ШАПКА
+   ========================================================== */
 header {
-    width: 100%;
-    padding: 20px 8%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: #111827;
-    border-bottom: 1px solid #263249;
+    justify-content: space-between;
+    padding: 14px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.3s, border-color 0.3s;
 }
 
-.logo { font-size: 30px; font-weight: bold; color: #60a5fa; }
+.logo {
+    font-weight: 800;
+    font-size: 22px;
+    color: #007bff;
+    letter-spacing: 1px;
+}
 
-nav { display: flex; gap: 10px; flex-wrap: wrap; }
+nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
 
-nav button {
-    padding: 10px 22px;
-    border: none;
-    border-radius: 10px;
+.nav-btn {
+    padding: 8px 14px;
     background: transparent;
-    color: #9ca3af;
-    font-size: 16px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-btn:hover {
+    background: #f0f0f0;
+}
+.nav-btn.active {
+    background: #007bff;
+    color: #fff;
 }
 
-nav button:hover { color: white; background: #1e293b; }
-nav button.active { background: #2563eb; color: white; }
-
-/* ==================== ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ ==================== */
-.page { display: none; min-height: calc(100vh - 150px); }
-
+/* ==========================================================
+   СТРАНИЦЫ
+   ========================================================== */
+.page {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
 .page.active {
     display: block;
-    animation: showPage 0.4s ease;
 }
 
-@keyframes showPage {
-    from { opacity: 0; transform: translateY(15px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ==================== ГЛАВНАЯ ==================== */
+/* ==========================================================
+   ГЛАВНАЯ (hero)
+   ========================================================== */
 .hero {
-    max-width: 1200px;
-    margin: auto;
-    padding: 100px 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 70px;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px 0;
 }
-
-.hero-text { max-width: 650px; }
+.hero-text {
+    flex: 1 1 380px;
+}
+.hero-image {
+    flex: 0 0 260px;
+    text-align: center;
+}
+.hero-image img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
 
 .badge {
     display: inline-block;
-    padding: 7px 15px;
-    margin-bottom: 20px;
-    background: #172554;
-    color: #60a5fa;
-    border: 1px solid #1d4ed8;
-    border-radius: 30px;
-    font-size: 14px;
+    padding: 6px 14px;
+    background: #e3f2fd;
+    color: #007bff;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
 }
 
-h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
-.hero h1 strong { color: #60a5fa; }
-.hero h2 { font-size: 27px; color: #cbd5e1; margin-bottom: 20px; }
-.hero p { color: #94a3b8; font-size: 18px; margin-bottom: 12px; }
-
-.hero-image img {
-    width: 300px; height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #2563eb;
-    box-shadow: 0 0 60px rgba(37, 99, 235, 0.35);
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+.hero h1 strong {
+    color: #007bff;
+}
+.hero h2 {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+.hero p {
+    margin-bottom: 12px;
+    color: #333;
 }
 
 .main-button {
-    margin-top: 15px;
-    padding: 12px 22px;
+    padding: 11px 22px;
+    background: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 10px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 10px;
 }
-
-.main-button:hover { background: #3b82f6; transform: translateY(-2px); }
-
+.main-button:hover { background: #0056b3; }
+.main-button:active { transform: scale(0.97); }
 .main-button.secondary {
-    background: #1e293b;
-    color: #cbd5e1;
-    border: 1px solid #334155;
+    background: #6c757d;
+}
+.main-button.secondary:hover {
+    background: #565e64;
 }
 
-.main-button.secondary:hover { background: #334155; color: white; }
+/* ==========================================================
+   ИНТЕРЕСЫ (карточки на главной)
+   ========================================================== */
+.interests {
+    margin-top: 40px;
+}
+.interests h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #fff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, background 0.3s, color 0.3s;
+}
+.card:hover { transform: translateY(-4px); }
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+.card p {
+    font-size: 14px;
+    color: #555;
+}
 
-/* ==================== ПОЛЯ ВВОДА ==================== */
+/* ==========================================================
+   РЕЗЮМЕ
+   ========================================================== */
+.resume-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: background 0.3s, color 0.3s;
+}
+.resume-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding-bottom: 22px;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+.resume-header img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.resume-header h1 {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+.resume-header h2 {
+    font-size: 15px;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.resume-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.resume-section {
+    margin-bottom: 24px;
+}
+.resume-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.resume-section p {
+    margin-bottom: 8px;
+    color: #333;
+}
+.education h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+.education span {
+    font-size: 13px;
+    color: #888;
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skills span {
+    padding: 6px 14px;
+    background: #e3f2fd;
+    color: #007bff;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.qualities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+.qualities h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+.qualities p {
+    font-size: 14px;
+    color: #555;
+}
+.goal p {
+    background: #f8f9fa;
+    padding: 14px;
+    border-left: 4px solid #007bff;
+    border-radius: 6px;
+}
+
+/* ==========================================================
+   ЗАДАНИЯ — ОБЩЕЕ
+   ========================================================== */
+.task-container {
+    background: #fff;
+    padding: 26px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: background 0.3s, color 0.3s;
+}
+.task-header {
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0f0f0;
+}
+.task-header h1 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+.task-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.task-block {
+    background: #fafafa;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #eee;
+    transition: background 0.3s, border-color 0.3s;
+}
+.task-block h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #007bff;
+}
+
+.hint {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 12px;
+}
+.hint code,
+code {
+    background: #eef1f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #d63384;
+}
+
 .field-label {
     display: block;
-    margin-bottom: 6px;
-    color: #94a3b8;
+    font-weight: 600;
     font-size: 14px;
+    margin: 10px 0 4px;
 }
 
 .text-input {
     width: 100%;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    background: #0f172a;
-    color: #ffffff;
-    border: 1px solid #263249;
-    border-radius: 10px;
-    font-size: 15px;
-    font-family: monospace;
-    transition: 0.3s;
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    color: #1a1a1a;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
-
 .text-input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: 2px solid #007bff;
+    outline-offset: 0;
+    border-color: #007bff;
 }
 
-.text-input::placeholder { color: #475569; }
+.btn-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.btn-row .main-button {
+    margin-top: 0;
+}
 
 .result {
     margin-top: 10px;
     font-size: 14px;
+    font-weight: 600;
     min-height: 20px;
-    color: #94a3b8;
+}
+.result.ok { color: #2e7d32; }
+.result.err { color: #d32f2f; }
+
+.error-msg {
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 20px;
+    margin-top: 6px;
 }
 
-.result.ok    { color: #4ade80; }
-.result.error { color: #f87171; }
-
-/* ==================== ИНТЕРЕСЫ ==================== */
-.interests { max-width: 1200px; margin: auto; padding: 30px; }
-.interests > h2 { font-size: 32px; margin-bottom: 30px; }
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+/* Демо-блок задания 1 и 2 */
+.old-element {
+    padding: 12px;
+    margin: 10px 0;
+    background: #fff3cd;
+    border: 1px dashed #d39e00;
+    border-radius: 8px;
+    color: #856404;
 }
-
-.card {
-    padding: 30px;
-    background: #111827;
-    border: 1px solid #263249;
-    border-radius: 18px;
+.new-div {
+    padding: 12px;
+    margin: 10px 0;
+    background: #d1ecf1;
+    border-left: 4px solid #0c5460;
+    border-radius: 8px;
+    color: #0c5460;
+    font-weight: 600;
+}
+.demo-box {
+    padding: 14px;
+    margin-top: 12px;
+    background: #fff;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
     transition: 0.3s;
 }
-
-.card:hover { transform: translateY(-7px); border-color: #2563eb; }
-.card-icon { font-size: 40px; margin-bottom: 15px; }
-.card h3 { margin-bottom: 10px; font-size: 21px; }
-.card p { color: #94a3b8; }
-
-/* ==================== РЕЗЮМЕ ==================== */
-.resume-container { max-width: 900px; margin: auto; padding: 70px 30px; }
-
-.resume-header {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 35px;
-    background: #111827;
-    border: 1px solid #263249;
-    border-radius: 20px;
-    margin-bottom: 25px;
+.demo-box.active {
+    background: #d4edda;
+    border-color: #43a047;
+    color: #1b5e20;
 }
-
-.resume-header img {
-    width: 150px; height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #2563eb;
-}
-
-.resume-header h1 { font-size: 38px; margin-bottom: 8px; }
-.resume-header h2 { color: #60a5fa; font-size: 19px; margin-bottom: 10px; }
-.resume-header p { color: #94a3b8; }
-
-.resume-section {
-    padding: 30px;
-    margin-bottom: 20px;
-    background: #111827;
-    border: 1px solid #263249;
-    border-radius: 18px;
-}
-
-.resume-section h2 { color: #60a5fa; margin-bottom: 18px; font-size: 27px; }
-.resume-section p { color: #cbd5e1; margin-bottom: 10px; }
-
-.education h3 { font-size: 21px; margin-bottom: 5px; }
-.education span { color: #64748b; }
-
-.skills { display: flex; flex-wrap: wrap; gap: 10px; }
-
-.skills span {
-    padding: 8px 15px;
-    background: #172554;
-    border: 1px solid #1d4ed8;
-    border-radius: 20px;
-    color: #93c5fd;
-}
-
-.qualities {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.qualities div { padding: 20px; background: #0f172a; border-radius: 12px; }
-.qualities h3 { margin-bottom: 8px; }
-.qualities p { font-size: 14px; }
-
-.goal { border-color: #2563eb; }
-
-/* ==================== СТРАНИЦЫ ЗАДАНИЙ ==================== */
-.task-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 70px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.task-header {
-    padding: 30px;
-    background: #111827;
-    border: 1px solid #263249;
-    border-radius: 20px;
-}
-
-.task-header h1 { font-size: 34px; color: #60a5fa; margin-bottom: 8px; }
-.task-header p { color: #94a3b8; }
-
-.task-block {
-    padding: 25px;
-    background: #111827;
-    border: 1px solid #263249;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.task-block h3 {
-    color: #60a5fa;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.task-block code {
-    background: #0f172a;
-    padding: 2px 8px;
-    border-radius: 6px;
-    color: #93c5fd;
-    font-size: 14px;
-}
-
-.hint {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.btn-row .main-button { margin-top: 0; }
-
-/* ==================== ЭЛЕМЕНТЫ ДЛЯ ЗАДАНИЙ ==================== */
-#helloText {
-    display: inline-block;
-    padding: 10px 16px;
-    background: #0f172a;
-    border-radius: 10px;
-    font-size: 18px;
-    color: #93c5fd;
-    margin-bottom: 15px;
-}
-
-.old-element {
-    padding: 15px 20px;
-    background: #0f172a;
-    border-radius: 12px;
-    color: #f87171;
-    margin-bottom: 15px;
-}
-
-#paragraphArea {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.created-paragraph {
-    padding: 18px 22px;
-    background: #0f172a;
-    border-radius: 12px;
-    font-size: 18px;
-    color: #cbd5e1;
+#paragraphArea p {
+    padding: 12px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
     cursor: pointer;
     transition: 0.3s;
-    user-select: none;
 }
 
-.created-paragraph:hover { background: #1e293b; }
-
-.new-div {
-    margin: 20px;
-    padding: 18px 25px;
-    background: #172554;
-    border: 1px solid #1d4ed8;
-    border-radius: 12px;
-    color: #93c5fd;
-    font-weight: bold;
-    text-align: center;
-    animation: showPage 0.4s ease;
-}
-
-.demo-box {
-    padding: 20px;
-    background: #0f172a;
-    border: 2px solid #263249;
-    border-radius: 12px;
-    color: #cbd5e1;
-    margin-top: 15px;
-    transition: 0.3s;
-    font-size: 18px;
-}
-
-.demo-box.active {
-    background: #172554;
-    border-color: #2563eb;
-    color: #93c5fd;
-    box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
-}
-
-.class-output {
-    padding: 12px 16px;
-    background: #0f172a;
-    border-radius: 10px;
-    color: #93c5fd;
-    font-family: monospace;
-    font-size: 14px;
-    word-break: break-word;
-    margin-top: 10px;
-}
-
-/* ============ ЗАДАНИЕ 3. Ошибка ============ */
-.error-msg {
-    color: #f87171;
-    font-weight: 600;
-    margin: 4px 0;
-    min-height: 20px;
-}
-
-/* ============ ЗАДАНИЕ 3. Палитра ============ */
+/* ==========================================================
+   ЗАДАНИЕ 3 — ТАБЛИЦА
+   ========================================================== */
 .color-picker-wrap {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
-    margin-top: 8px;
+    margin-top: 14px;
 }
 .color-picker {
     display: flex;
@@ -402,19 +445,16 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     cursor: pointer;
     border: 3px solid transparent;
     transition: transform 0.15s, border-color 0.15s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .color-swatch:hover { transform: scale(1.15); }
 .color-swatch.selected {
-    border-color: #60a5fa;
+    border-color: #222;
     transform: scale(1.2);
 }
 
-/* ============ ЗАДАНИЕ 3. Таблица ============ */
 #tableContainer {
-    margin-top: 12px;
+    margin-top: 16px;
     overflow-x: auto;
-    text-align: center;
 }
 #tableContainer table {
     border-collapse: collapse;
@@ -423,22 +463,21 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
 #tableContainer td {
     width: 40px;
     height: 40px;
-    border: 1px solid #334155;
+    border: 1px solid #999;
     cursor: pointer;
-    background: #0f172a;
+    background: #fff;
     transition: background 0.15s;
 }
 #tableContainer td:hover {
-    outline: 2px solid #2563eb;
+    outline: 2px solid #007bff;
     outline-offset: -2px;
 }
 
-/* ============ ЗАДАНИЕ 3. Статистика ============ */
 .color-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 12px;
+    margin-top: 14px;
     min-height: 30px;
 }
 .stat-item {
@@ -447,26 +486,32 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     gap: 8px;
     padding: 6px 12px;
     border-radius: 20px;
-    background: #0f172a;
-    border: 1px solid #263249;
+    background: #f0f0f0;
+    color: #1a1a1a;
     font-size: 14px;
     font-weight: 600;
-    color: #cbd5e1;
+    transition: background 0.3s, color 0.3s;
 }
 .stat-item .dot {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+.stat-item.total {
+    background: #007bff;
+    color: #fff;
 }
 
-/* ============ ЗАДАНИЕ 4. Switch ============ */
+/* ==========================================================
+   ЗАДАНИЕ 4 — ТУМБЛЕР
+   ========================================================== */
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 32px;
-    margin-right: 10px;
     vertical-align: middle;
 }
 .switch input {
@@ -478,7 +523,7 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     position: absolute;
     cursor: pointer;
     inset: 0;
-    background: #334155;
+    background: #ccc;
     border-radius: 32px;
     transition: 0.3s;
 }
@@ -493,62 +538,127 @@ h1 { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
     border-radius: 50%;
     transition: 0.3s;
 }
-.switch input:checked + .slider { background: #2563eb; }
-.switch input:checked + .slider::before { transform: translateX(28px); }
+.switch input:checked + .slider {
+    background: #007bff;
+}
+.switch input:checked + .slider::before {
+    transform: translateX(28px);
+}
 
-/* ============ ТЁМНАЯ ТЕМА ============ */
+/* ==========================================================
+   ПОДВАЛ
+   ========================================================== */
+footer {
+    text-align: center;
+    padding: 24px;
+    color: #888;
+    font-size: 14px;
+    border-top: 1px solid #e5e5e5;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+/* ==========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================== */
 body.dark {
-    background: #05070f;
+    background: #121212;
     color: #eaeaea;
 }
 body.dark header {
-    background: #0a0f1c;
-    border-color: #1a2438;
+    background: #1e1e1e;
+    border-color: #333;
 }
-body.dark .task-header,
-body.dark .task-block,
+body.dark .nav-btn {
+    color: #ccc;
+}
+body.dark .nav-btn:hover {
+    background: #2a2a2a;
+}
+body.dark .nav-btn.active {
+    background: #3a7bd5;
+    color: #fff;
+}
 body.dark .card,
-body.dark .resume-header,
-body.dark .resume-section {
-    background: #0a0f1c;
-    border-color: #1a2438;
+body.dark .resume-container,
+body.dark .task-container {
+    background: #1e1e1e;
+    color: #eaeaea;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+body.dark .card p,
+body.dark .resume-section p,
+body.dark .qualities p {
+    color: #bbb;
+}
+body.dark .task-block {
+    background: #252525;
+    border-color: #333;
+}
+body.dark .task-header {
+    border-color: #333;
 }
 body.dark .text-input {
-    background: #05070f;
+    background: #2a2a2a;
     color: #eaeaea;
-    border-color: #1a2438;
+    border-color: #444;
+}
+body.dark .demo-box {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #eaeaea;
+}
+body.dark .demo-box.active {
+    background: #1b5e20;
+    border-color: #43a047;
+    color: #d4edda;
+}
+body.dark .old-element {
+    background: #4a3b00;
+    color: #ffd54f;
+    border-color: #d39e00;
+}
+body.dark .new-div {
+    background: #00363a;
+    color: #80deea;
+}
+body.dark #paragraphArea p {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #eaeaea;
 }
 body.dark .stat-item {
-    background: #05070f;
+    background: #2a2a2a;
     color: #eaeaea;
 }
+body.dark .stat-item.total {
+    background: #3a7bd5;
+    color: #fff;
+}
 body.dark #tableContainer td {
-    background: #05070f;
-    border-color: #1a2438;
+    border-color: #555;
+    background: #fff; /* цвет ячейки оставляем, красится вручную */
 }
 body.dark .color-swatch.selected {
     border-color: #fff;
 }
-
-/* ==================== ПОДВАЛ ==================== */
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #64748b;
-    border-top: 1px solid #263249;
+body.dark .goal p {
+    background: #252525;
 }
-
-/* ==================== АДАПТИВНОСТЬ ==================== */
-@media (max-width: 768px) {
-    header { padding: 15px 20px; flex-direction: column; gap: 15px; }
-    nav { justify-content: center; }
-    nav button { padding: 8px 14px; font-size: 14px; }
-
-    .hero { flex-direction: column-reverse; text-align: center; padding: 60px 20px; }
-    .hero-image img { width: 220px; height: 220px; }
-    h1 { font-size: 38px; }
-
-    .cards { grid-template-columns: 1fr; }
-    .resume-header { flex-direction: column; text-align: center; }
-    .qualities { grid-template-columns: 1fr; }
+body.dark footer {
+    color: #777;
+    border-color: #333;
+}
+body.dark .badge {
+    background: #1a3a5c;
+    color: #64b5f6;
+}
+body.dark .skills span {
+    background: #1a3a5c;
+    color: #64b5f6;
+}
+body.dark .hero h2 {
+    color: #aaa;
+}
+body.dark .hero p {
+    color: #ccc;
 }

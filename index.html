@@ -259,42 +259,43 @@
 
 
     <!-- ==================== ЗАДАНИЕ 3 ==================== -->
-    <section id="task3" class="page">
-        <div class="task-container">
+    <!-- ==================== ЗАДАНИЕ 3 ==================== -->
+<section id="task3" class="page">
+    <div class="task-container">
 
-            <div class="task-header">
-                <h1>Задание 3 — создание таблицы</h1>
-                <p>Введи количество строк и столбцов, выбери цвет и раскрашивай ячейки.</p>
-            </div>
-
-            <div class="task-block">
-                <h3>Параметры таблицы</h3>
-
-                <label class="field-label" for="rowsInput">Жолдар саны (rows):</label>
-                <input type="text" id="rowsInput" class="text-input" placeholder="мысалы: 4">
-
-                <label class="field-label" for="colsInput">Бағандар саны (columns):</label>
-                <input type="text" id="colsInput" class="text-input" placeholder="мысалы: 5">
-
-                <div class="btn-row">
-                    <button id="createTableBtn" class="main-button">Кесте жасау</button>
-                    <button id="clearTableBtn" class="main-button secondary">Тазалау</button>
-                </div>
-
-                <p id="tableError" class="error-msg"></p>
-
-                <div class="color-picker-wrap">
-                    <span class="field-label">Түс таңдау:</span>
-                    <div id="colorPicker" class="color-picker"></div>
-                </div>
-
-                <div id="tableContainer"></div>
-
-                <div id="colorStats" class="color-stats"></div>
-            </div>
-
+        <div class="task-header">
+            <h1>Задание 3 — создание таблицы</h1>
+            <p>Введи количество строк и столбцов, выбери цвет и раскрашивай ячейки.</p>
         </div>
-    </section>
+
+        <div class="task-block">
+            <h3>Параметры таблицы</h3>
+
+            <label class="field-label" for="rowsInput">Количество строк:</label>
+            <input type="text" id="rowsInput" class="text-input" placeholder="например: 4">
+
+            <label class="field-label" for="colsInput">Количество столбцов:</label>
+            <input type="text" id="colsInput" class="text-input" placeholder="например: 5">
+
+            <div class="btn-row">
+                <button id="createTableBtn" class="main-button">Создать таблицу</button>
+                <button id="clearTableBtn" class="main-button secondary">Очистить</button>
+            </div>
+
+            <p id="tableError" class="error-msg"></p>
+
+            <div class="color-picker-wrap">
+                <span class="field-label">Выбор цвета:</span>
+                <div id="colorPicker" class="color-picker"></div>
+            </div>
+
+            <div id="tableContainer"></div>
+
+            <div id="colorStats" class="color-stats"></div>
+        </div>
+
+    </div>
+</section>
 
 
     <!-- ==================== ЗАДАНИЕ 4 ==================== -->
@@ -311,7 +312,7 @@
                     <input type="checkbox" id="themeToggle">
                     <span class="slider"></span>
                 </label>
-                <span class="field-label">Қараңғы тақырыпты қосу/өшіру</span>
+                <span class="field-label">Включить / выключить тёмную тему</span>
             </div>
 
         </div>
